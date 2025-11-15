@@ -1,0 +1,7 @@
+# Dependencies and Builds
+/node_modules
+/artifacts
+/cache
+
+# Configuration and Security
+.env
