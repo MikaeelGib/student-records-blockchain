@@ -1,9 +1,9 @@
-import hardhatToolboxMochaEthersPlugin from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
-import { configVariable, defineConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-ethers";
+// srms-contracts/hardhat.config.ts
 
-export default defineConfig({
-  plugins: [hardhatToolboxMochaEthersPlugin],
+import "@nomicfoundation/hardhat-toolbox";
+import { configVariable, defineConfig } from "hardhat/config";
+
+const config = defineConfig({
   solidity: {
     profiles: {
       default: {
@@ -21,6 +21,14 @@ export default defineConfig({
     },
   },
   networks: {
+    // FIX: Added 'type: "http"' to satisfy the TypeScript requirement for standard networks.
+    localhost: {
+      type: "http", 
+      chainType: "l1", // This is optional but keeps consistency with your other l1 networks
+      url: "http://127.0.0.1:8545",
+    },
+    
+    // KEEP YOUR EXISTING NETWORKS
     hardhatMainnet: {
       type: "edr-simulated",
       chainType: "l1",
@@ -37,3 +45,5 @@ export default defineConfig({
     },
   },
 });
+
+export default config;
