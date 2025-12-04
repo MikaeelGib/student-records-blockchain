@@ -1,23 +1,15 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["es2023"],
-    "module": "node16",
-    "target": "es2022",
-    
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node16",
     "outDir": "dist",
-
-    "resolveJsonModule": true,
-    "rootDir": "." 
+    "rootDir": ".",
+    "types": ["hardhat", "node"]
   },
-  
   "include": [
-    "./test", 
     "./scripts",
-    "./hardhat.config.ts"
+    "./test",
+    "./hardhat.config.ts",
+    "./typechain",
+    "./**/*.ts"
   ]
-
 }
