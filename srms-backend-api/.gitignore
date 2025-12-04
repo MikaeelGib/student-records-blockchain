@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules
+
+# Environment Variables and Secrets
+.env
+
+# Build Output
+/dist
+/build
+
+# Log Files (if your server generates them)
+*.log
+
+# Database Dumps/Configuration (should be backed up elsewhere)
+*.sqlite
+*.db
+/data
